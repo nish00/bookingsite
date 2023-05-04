@@ -1,22 +1,29 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
-import { Box } from '@mui/material';
+import HomePage from './Pages/HomePage';
+import About from './Pages/About';
+import Experience from './Pages/Experience';
+import Stays from './Pages/Stays';
+
+import {HashRouter as Router, Routes, Route} from "react-router-dom";
+
 
 
 function App() {
   return (
     <>
+    <Router>
     <Navbar/>
-      <Box
-        component="img"
-        sx={{
-          height: '100vh',
-          width: '100vw',
-          objectFit: 'cover',~
-        }}
-        alt="The house from the offer."
-        src="https://images.unsplash.com/photo-1515404929826-76fff9fef6fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
-      />
+    <Routes>
+        <Route path ="/" element={<HomePage />}/>
+        <Route path ="/about" element={<About />}/>
+        <Route path ="/experience" element={<Experience />}/>
+        <Route path ="/stays" element={<Stays />}/>
+        {/* <Route path ="/contact" element={<Contact />}/> */}
+        {/* <Route path ="*" element={<NotFound />}/> */}
+      </Routes>
+    </Router>
+
     </>
   );
 }
