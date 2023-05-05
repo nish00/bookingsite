@@ -9,6 +9,5 @@ export default function Stays() {
         <h1>Stays</h1>
         <h1>Stays</h1>
         </>
-
     );
 }
